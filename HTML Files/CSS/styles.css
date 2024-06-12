@@ -1,0 +1,114 @@
+/* Reset some default browser styles */
+body, h1, h2, h3, p, ul, table, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333333;
+    background-color: #FFFFFF;
+}
+
+header {
+    background-color: #006400;
+    color: #FFFFFF;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.logo img {
+    width: 150px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero {
+    background: url('../images/hero.jpg') no-repeat center center/cover;
+    color: #333333;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 3em;
+}
+
+.hero p {
+    font-size: 1.2em;
+}
+
+.about, .sports, .services, .events, .signup, .signin {
+    padding: 20px;
+    text-align: center;
+}
+
+.about img, .sports img, .events img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #006400;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #004d00;
+}
+
+footer {
+    background-color: #333333;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px 0;
+}
