@@ -6,107 +6,11 @@
     <title>Sports World</title>
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #333;
-            color: white;
-            padding: 10px 20px;
-        }
-        .logo img {
-            width: 100px;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-        }
-        nav ul li {
-            margin: 0 10px;
-        }
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-            padding: 5px 10px;
-            transition: background-color 0.3s;
-        }
-        nav ul li a:hover {
-            background-color: #555;
-        }
-        .hero {
-            background: url('images/hero.jpg') no-repeat center center/cover;
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
-        }
-        .hero h1 {
-            font-size: 50px;
-            margin-bottom: 10px;
-        }
-        .hero p {
-            font-size: 20px;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-        .latest-news, .featured-sports, .upcoming-events, .testimonials, .subscribe {
-            margin-bottom: 40px;
-        }
-        .section-title {
-            font-size: 30px;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #333;
-            padding-bottom: 10px;
-        }
-        .news-item, .sport-item, .event-item, .testimonial {
-            background: #f4f4f4;
-            padding: 20px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-        }
-        .news-item img, .sport-item img, .event-item img {
-            max-width: 100%;
-            border-radius: 5px;
-        }
-        .testimonial {
-            border-left: 5px solid #333;
-            padding-left: 15px;
-        }
-        .subscribe form {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .subscribe input[type="email"] {
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #333;
-            border-radius: 5px;
-            margin-right: 10px;
-        }
-        .subscribe input[type="submit"] {
-            padding: 10px 20px;
-            font-size: 16px;
-            border: 1px solid #333;
-            border-radius: 5px;
-            background-color: #333;
-            color: white;
-            cursor: pointer;
-        }
         footer {
-            background-color: #333;
-            color: white;
+            background-color: #333333;
+            color: #FFFFFF;
             text-align: center;
-            padding: 10px 20px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            padding: 10px 0;
         }
     </style>
 </head>
@@ -131,11 +35,12 @@
 
     <!-- Main Content -->
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <h1>Welcome to Sports World</h1>
-            <p>Your ultimate destination for all things sports.</p>
-        </section>
+       <!-- Hero Section -->
+<section class="hero">
+    <h1 style="color: black;">Welcome to Sports World</h1>
+    <p style="color: black;">Your ultimate destination for all things sports.</p>
+</section>
+
 
         <!-- Latest News Section -->
         <section class="latest-news container">
@@ -158,35 +63,54 @@
         <section class="featured-sports container">
             <h2 class="section-title">Featured Sports</h2>
             <div class="sport-item">
-                <img src="images/sport1.jpg" alt="Sport 1">
-                <h3>Sport Name 1</h3>
-                <p>Details about the sport, recent highlights, and why it's featured...</p>
-                <a href="sport1.html">Learn more</a>
+                <img src="images/basketball.jpg" alt="Basketball">
+                <h3>Basketball</h3>
+                <p>Details about basketball, recent highlights, and why it's featured...</p>
+                <a href="basketball.html">Learn more</a>
             </div>
             <div class="sport-item">
-                <img src="images/sport2.jpg" alt="Sport 2">
-                <h3>Sport Name 2</h3>
-                <p>Details about the sport, recent highlights, and why it's featured...</p>
-                <a href="sport2.html">Learn more</a>
+                <img src="images/tennis.jpg" alt="Tennis">
+                <h3>Tennis</h3>
+                <p>Details about tennis, recent highlights, and why it's featured...</p>
+                <a href="tennis.html">Learn more</a>
+            </div>
+            <div class="sport-item">
+                <img src="images/soccer.jpg" alt="Soccer">
+                <h3>Soccer</h3>
+                <p>Details about soccer, recent highlights, and why it's featured...</p>
+                <a href="soccer.html">Learn more</a>
             </div>
         </section>
-
+        
         <!-- Upcoming Events Section -->
-        <section class="upcoming-events container">
-            <h2 class="section-title">Upcoming Events</h2>
-            <div class="event-item">
-                <img src="images/event1.jpg" alt="Event 1">
-                <h3>Event Name 1</h3>
-                <p>Details about the upcoming event, date, location, and how to participate...</p>
-                <a href="event1.html">Learn more</a>
-            </div>
-            <div class="event-item">
-                <img src="images/event2.jpg" alt="Event 2">
-                <h3>Event Name 2</h3>
-                <p>Details about the upcoming event, date, location, and how to participate...</p>
-                <a href="event2.html">Learn more</a>
-            </div>
-        </section>
+<section class="upcoming-events container">
+    <h2 class="section-title">Upcoming Events</h2>
+    <div class="event-item">
+        <a href="events.html#summer_camp">
+            <img src="images/summer_camp.jpg" alt="Summer Sports Camp">
+            <h3>Summer Sports Camp</h3>
+            <p>Join us for an exciting summer camp filled with various sports activities. Date: July 15th-30th, 2024.</p>
+            <span>Learn more</span>
+        </a>
+    </div>
+    <div class="event-item">
+        <a href="events.html#sports_meet">
+            <img src="images/sports_meet.jpg" alt="Annual Sports Meet">
+            <h3>Annual Sports Meet</h3>
+            <p>Participate in our annual sports meet and showcase your talents. Date: September 10, 2024.</p>
+            <span>Learn more</span>
+        </a>
+    </div>
+    <div class="event-item">
+        <a href="events.html#winter_training">
+            <img src="images/winter_training.jpg" alt="Winter Training Sessions">
+            <h3>Winter Training Sessions</h3>
+            <p>Get ready for the winter season with our specialized training sessions. Date: December 5th-20th, 2024.</p>
+            <span>Learn more</span>
+        </a>
+    </div>
+</section>
+
 
         <!-- Testimonials Section -->
         <section class="testimonials container">
