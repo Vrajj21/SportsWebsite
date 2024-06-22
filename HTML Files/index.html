@@ -5,6 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sports World</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+        }
+        .logo img {
+            width: 100px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #555;
+        }
+        .hero {
+            background: url('images/hero.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .latest-news, .featured-sports, .upcoming-events, .testimonials, .subscribe {
+            margin-bottom: 40px;
+        }
+        .section-title {
+            font-size: 30px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+        .news-item, .sport-item, .event-item, .testimonial {
+            background: #f4f4f4;
+            padding: 20px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .news-item img, .sport-item img, .event-item img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        .testimonial {
+            border-left: 5px solid #333;
+            padding-left: 15px;
+        }
+        .subscribe form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .subscribe input[type="email"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .subscribe input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <!-- Header Section -->
@@ -27,9 +131,81 @@
 
     <!-- Main Content -->
     <main>
+        <!-- Hero Section -->
         <section class="hero">
             <h1>Welcome to Sports World</h1>
             <p>Your ultimate destination for all things sports.</p>
+        </section>
+
+        <!-- Latest News Section -->
+        <section class="latest-news container">
+            <h2 class="section-title">Latest News</h2>
+            <div class="news-item">
+                <img src="images/footballworldcup.jpg" alt="WCTrophy">
+                <h3>Italy Wins Football World Cup Championship</h3>
+                <p>Summary of the news article to give readers a quick overview of the content...</p>
+                <a href="football-world-cup.html">Read more</a>
+            </div>
+            <div class="news-item">
+                <img src="images/SerenaWilliamsWimbledon.jpg" alt="News 2">
+                <h3>Title of News Article 2</h3>
+                <p>Summary of the news article to give readers a quick overview of the content...</p>
+                <a href="serena-williams-wimbledon.html">Read more</a>
+            </div>
+        </section>
+
+        <!-- Featured Sports Section -->
+        <section class="featured-sports container">
+            <h2 class="section-title">Featured Sports</h2>
+            <div class="sport-item">
+                <img src="images/sport1.jpg" alt="Sport 1">
+                <h3>Sport Name 1</h3>
+                <p>Details about the sport, recent highlights, and why it's featured...</p>
+                <a href="sport1.html">Learn more</a>
+            </div>
+            <div class="sport-item">
+                <img src="images/sport2.jpg" alt="Sport 2">
+                <h3>Sport Name 2</h3>
+                <p>Details about the sport, recent highlights, and why it's featured...</p>
+                <a href="sport2.html">Learn more</a>
+            </div>
+        </section>
+
+        <!-- Upcoming Events Section -->
+        <section class="upcoming-events container">
+            <h2 class="section-title">Upcoming Events</h2>
+            <div class="event-item">
+                <img src="images/event1.jpg" alt="Event 1">
+                <h3>Event Name 1</h3>
+                <p>Details about the upcoming event, date, location, and how to participate...</p>
+                <a href="event1.html">Learn more</a>
+            </div>
+            <div class="event-item">
+                <img src="images/event2.jpg" alt="Event 2">
+                <h3>Event Name 2</h3>
+                <p>Details about the upcoming event, date, location, and how to participate...</p>
+                <a href="event2.html">Learn more</a>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials container">
+            <h2 class="section-title">What Our Users Say</h2>
+            <div class="testimonial">
+                <p>"Sports World has completely changed how I stay updated with sports news and events. Highly recommended!" - John Doe</p>
+            </div>
+            <div class="testimonial">
+                <p>"The best platform for all sports enthusiasts. From news to events, they have it all!" - Jane Smith</p>
+            </div>
+        </section>
+
+        <!-- Subscription Section -->
+        <section class="subscribe container">
+            <h2 class="section-title">Subscribe to Our Newsletter</h2>
+            <form>
+                <input type="email" placeholder="Enter your email" required>
+                <input type="submit" value="Subscribe">
+            </form>
         </section>
     </main>
 

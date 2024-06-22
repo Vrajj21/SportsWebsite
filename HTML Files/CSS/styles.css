@@ -1,114 +1,102 @@
-/* Reset some default browser styles */
-body, h1, h2, h3, p, ul, table, th, td {
-    margin: 0;
-    padding: 0;
-}
-
-/* Global Styles */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    color: #333333;
-    background-color: #FFFFFF;
 }
-
 header {
-    background-color: #006400;
-    color: #FFFFFF;
-    padding: 10px 0;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
 }
-
 .logo img {
-    width: 150px;
+    width: 100px;
 }
-
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
 }
-
 nav ul li {
-    margin: 0 15px;
+    margin: 0 10px;
 }
-
 nav ul li a {
-    color: #FFFFFF;
     text-decoration: none;
-    font-weight: bold;
+    color: white;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
 }
-
+nav ul li a:hover {
+    background-color: #555;
+}
 .hero {
-    background: url('../images/hero.jpg') no-repeat center center/cover;
-    color: #333333;
+    background: url('images/hero.jpg') no-repeat center center/cover;
+    color: white;
     text-align: center;
     padding: 100px 20px;
 }
-
 .hero h1 {
-    font-size: 3em;
+    font-size: 50px;
+    margin-bottom: 10px;
 }
-
 .hero p {
-    font-size: 1.2em;
+    font-size: 20px;
 }
-
-.about, .sports, .services, .events, .signup, .signin {
-    padding: 20px;
-    text-align: center;
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
 }
-
-.about img, .sports img, .events img {
-    max-width: 100%;
-    height: auto;
-    margin-top: 20px;
+.latest-news, .featured-sports, .upcoming-events, .testimonials, .subscribe {
+    margin-bottom: 40px;
 }
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
-
-th, td {
-    padding: 10px;
-    border: 1px solid #ddd;
-    text-align: left;
-}
-
-form {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-label {
-    display: block;
-    margin: 10px 0 5px;
-}
-
-input {
-    width: 100%;
-    padding: 10px;
+.section-title {
+    font-size: 30px;
     margin-bottom: 20px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
 }
-
-button {
-    padding: 10px 20px;
-    background-color: #006400;
-    color: #FFFFFF;
-    border: none;
+.news-item, .sport-item, .event-item, .testimonial {
+    background: #f4f4f4;
+    padding: 20px;
+    margin-bottom: 10px;
     border-radius: 5px;
+}
+.news-item img, .sport-item img, .event-item img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+.testimonial {
+    border-left: 5px solid #333;
+    padding-left: 15px;
+}
+.subscribe form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.subscribe input[type="email"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.subscribe input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
     cursor: pointer;
 }
-
-button:hover {
-    background-color: #004d00;
-}
-
 footer {
-    background-color: #333333;
-    color: #FFFFFF;
+    background-color: #333;
+    color: white;
     text-align: center;
-    padding: 10px 0;
+    padding: 10px 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
