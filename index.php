@@ -1,6 +1,6 @@
 <?php
- include 'db_connection.php';
-  ?>
+include 'db_connection.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,27 +23,17 @@
         <div class="logo">
             <img src="images/logo.png" alt="Sports World Logo">
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="about.php">About Us</a></li>
-                <li><a href="sports.php">Sports</a></li>
-                <li><a href="services.php">Services</a></li>
-                <li><a href="events.php">Events</a></li>
-                <li><a href="signup.php">Sign Up</a></li>
-                <li><a href="signin.php">Sign In</a></li>
-            </ul>
-        </nav>
+        <!-- Include navigation bar -->
+        <?php include 'nav.php'; ?>
     </header>
 
     <!-- Main Content -->
     <main>
        <!-- Hero Section -->
-<section class="hero">
-    <h1 style="color: black;">Welcome to Sports World</h1>
-    <p style="color: black;">Your ultimate destination for all things sports.</p>
-</section>
-
+       <section class="hero">
+           <h1 style="color: black;">Welcome to Sports World</h1>
+           <p style="color: black;">Your ultimate destination for all things sports.</p>
+       </section>
 
         <!-- Latest News Section -->
         <section class="latest-news container">
@@ -86,34 +76,33 @@
         </section>
         
         <!-- Upcoming Events Section -->
-<section class="upcoming-events container">
-    <h2 class="section-title">Upcoming Events</h2>
-    <div class="event-item">
-        <a href="events.php#summer_camp">
-            <img src="images/summer_camp.jpg" alt="Summer Sports Camp">
-            <h3>Summer Sports Camp</h3>
-            <p>Join us for an exciting summer camp filled with various sports activities. Date: July 15th-30th, 2024.</p>
-            <span>Learn more</span>
-        </a>
-    </div>
-    <div class="event-item">
-        <a href="events.php#sports_meet">
-            <img src="images/sports_meet.jpg" alt="Annual Sports Meet">
-            <h3>Annual Sports Meet</h3>
-            <p>Participate in our annual sports meet and showcase your talents. Date: September 10, 2024.</p>
-            <span>Learn more</span>
-        </a>
-    </div>
-    <div class="event-item">
-        <a href="events.php#winter_training">
-            <img src="images/winter_training.jpg" alt="Winter Training Sessions">
-            <h3>Winter Training Sessions</h3>
-            <p>Get ready for the winter season with our specialized training sessions. Date: December 5th-20th, 2024.</p>
-            <span>Learn more</span>
-        </a>
-    </div>
-</section>
-
+        <section class="upcoming-events container">
+            <h2 class="section-title">Upcoming Events</h2>
+            <div class="event-item">
+                <a href="events.php#summer_camp">
+                    <img src="images/summer_camp.jpg" alt="Summer Sports Camp">
+                    <h3>Summer Sports Camp</h3>
+                    <p>Join us for an exciting summer camp filled with various sports activities. Date: July 15th-30th, 2024.</p>
+                    <span>Learn more</span>
+                </a>
+            </div>
+            <div class="event-item">
+                <a href="events.php#sports_meet">
+                    <img src="images/sports_meet.jpg" alt="Annual Sports Meet">
+                    <h3>Annual Sports Meet</h3>
+                    <p>Participate in our annual sports meet and showcase your talents. Date: September 10, 2024.</p>
+                    <span>Learn more</span>
+                </a>
+            </div>
+            <div class="event-item">
+                <a href="events.php#winter_training">
+                    <img src="images/winter_training.jpg" alt="Winter Training Sessions">
+                    <h3>Winter Training Sessions</h3>
+                    <p>Get ready for the winter season with our specialized training sessions. Date: December 5th-20th, 2024.</p>
+                    <span>Learn more</span>
+                </a>
+            </div>
+        </section>
 
         <!-- Testimonials Section -->
         <section class="testimonials container">
@@ -128,19 +117,16 @@
 
         <!-- Subscription Section -->
         <section class="subscribe container">
-    <h2 class="section-title">Subscribe to Our Newsletter</h2>
-    <form action="subscribe.php" method="post">
-        <input type="email" name="email" placeholder="Enter your email" required>
-        <input type="submit" value="Subscribe">
-    </form>
-</section>
-
+            <h2 class="section-title">Subscribe to Our Newsletter</h2>
+            <form action="subscribe.php" method="post">
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <input type="submit" value="Subscribe">
+            </form>
+        </section>
     </main>
 
     <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2024 Sports World. All rights reserved.</p>
-    </footer>
+    <!-- Include footer -->
+    <?php include 'footer.php'; ?>
 </body>
 </html>
-

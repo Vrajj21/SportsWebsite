@@ -2,76 +2,59 @@
 session_start();
 require_once 'db_connection.php';
 
-// Initialize variables to store user input and error messages
-$username = $password = '';
-$username_err = $password_err = '';
+// Initialize variables
+$email = $password = "";
+$email_err = $password_err = "";
 
-// Process form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Validate username
-    if (empty(trim($_POST['username']))) {
-        $username_err = 'Please enter your username.';
-    } else {
-        $username = trim($_POST['username']);
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // Validate email and password
+    if (empty($email)) {
+        $email_err = "Please enter your email.";
     }
 
-    // Validate password
-    if (empty(trim($_POST['password']))) {
-        $password_err = 'Please enter your password.';
-    } else {
-        $password = trim($_POST['password']);
+    if (empty($password)) {
+        $password_err = "Please enter your password.";
     }
 
-    // Check if both username and password are provided
-    if (empty($username_err) && empty($password_err)) {
-        // Prepare a SELECT statement to retrieve user details
-        $sql = "SELECT user_id, username, password FROM users WHERE username = ?";
-        
-        if ($stmt = $conn->prepare($sql)) {
-            // Bind variables to the prepared statement as parameters
-            $stmt->bind_param("s", $username);
-            
-            // Attempt to execute the prepared statement
-            if ($stmt->execute()) {
-                // Store result
-                $stmt->store_result();
-                
-                // Check if username exists, then verify password
-                if ($stmt->num_rows == 1) {
-                    // Bind result variables
-                    $stmt->bind_result($user_id, $username, $hashed_password);
-                    
-                    if ($stmt->fetch()) {
-                        // Verify hashed password
-                        if (password_verify($password, $hashed_password)) {
-                            // Password is correct, start a new session
-                            session_regenerate_id();
-                            $_SESSION['loggedin'] = TRUE;
-                            $_SESSION['username'] = $username;
-                            $_SESSION['user_id'] = $user_id;
+    if (empty($email_err) && empty($password_err)) {
+        $stmt = $conn->prepare("SELECT user_id, password FROM users WHERE email = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $stmt->store_result();
 
-                            // Redirect user to profile page
-                            header('Location: profile.php');
-                            exit;
-                        } else {
-                            // Display an error message if password is incorrect
-                            $password_err = 'The password you entered is incorrect.';
-                        }
-                    }
-                } else {
-                    // Display an error message if username doesn't exist
-                    $username_err = 'No account found with that username.';
-                }
+        if ($stmt->num_rows > 0) {
+            $stmt->bind_result($user_id, $hashed_password);
+            $stmt->fetch();
+
+            // Debugging: Output the hashed password and the input password
+            echo "Hashed password from DB: $hashed_password<br>";
+            echo "Input password: $password<br>";
+
+            if (password_verify($password, $hashed_password)) {
+                // Generate 2FA code
+                $verification_code = rand(100000, 999999);
+                $_SESSION['verification_code'] = $verification_code;
+                $_SESSION['user_id'] = $user_id;
+
+                // Send code to user's email
+                mail($email, "Your Verification Code", "Your verification code is: $verification_code");
+
+                // Redirect to 2FA verification page
+                header('Location: verify_2fa.php');
+                exit;
             } else {
-                echo "Oops! Something went wrong. Please try again later.";
+                $password_err = "Invalid password.";
             }
-
-            // Close statement
-            $stmt->close();
+        } else {
+            $email_err = "No user found with that email.";
         }
+
+        $stmt->close();
     }
 
-    // Close connection
     $conn->close();
 }
 ?>
@@ -95,17 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="logo">
             <img src="images/logo.png" alt="Sports World Logo">
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="about.php">About Us</a></li>
-                <li><a href="sports.php">Sports</a></li>
-                <li><a href="services.php">Services</a></li>
-                <li><a href="events.php">Events</a></li>
-                <li><a href="signup.php">Sign Up</a></li>
-                <li><a href="signin.php">Sign In</a></li>
-            </ul>
-        </nav>
+        <?php include 'nav.php'; ?>
     </header>
 
     <!-- Main Content -->
@@ -114,9 +87,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <h2>Sign In</h2>
             <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
                 <div class="form-group">
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" value="<?php echo $username; ?>" required>
-                    <span class="error"><?php echo $username_err; ?></span>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($email); ?>" required>
+                    <span class="error"><?php echo $email_err; ?></span>
                 </div>
 
                 <div class="form-group">
@@ -131,8 +104,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </main>
 
     <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2024 Sports World. All rights reserved.</p>
-    </footer>
+    <?php include 'footer.php'; ?>
 </body>
 </html>

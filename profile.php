@@ -31,6 +31,15 @@ $conn->close();
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Sports World Logo">
+        </div>
+       <!-- Include navigation bar -->
+       <?php include 'nav.php'; ?>
+    </header>
+
     <!-- Profile Information -->
     <section class="profile container">
         <h2>User Profile</h2>
@@ -41,8 +50,7 @@ $conn->close();
     </section>
 
     <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2024 Sports World. All rights reserved.</p>
-    </footer>
+    <!-- Include footer -->
+    <?php include 'footer.php'; ?>
 </body>
 </html>
