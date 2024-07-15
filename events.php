@@ -4,27 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events - Sports World</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="style.css">
     <style>
         .events {
-            margin: 20px;
+            width: 80%;
+            max-width: 1000px;
+            margin: 20px auto;
         }
+
+        .events h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
         .event-item {
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            background-color: #fff;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
-            padding: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
         }
+
+        .event-item:hover {
+            transform: scale(1.05);
+        }
+
         .event-item img {
             max-width: 100%;
             border-radius: 5px;
         }
+
         .event-item h3 {
             margin-top: 10px;
+            color: #2c3e50;
         }
+
         .event-item p {
             margin-bottom: 10px;
+            color: #333;
         }
+
         .event-price {
             background-color: #333;
             color: #fff;
@@ -38,17 +61,26 @@
 <body>
     <!-- Header Section -->
     <header>
-        <div class="logo">
-            <img src="images/logo.png" alt="Sports World Logo">
+        
+        <h1>Sports World - Events</h1>
+        <nav>
+        <a href="index.php">Home</a>
+        <a href="profile.php">Profile</a>
+        <a href="services.php">Services</a>
+        <a href="sports.php">Sports</a>
+        <a href="events.php">Events</a>
+        <a href="analytics.php">Analytics</a>
+        <a href="logout.php">Logout</a>
+    </nav>
+    <div class="logo">
+            <img src="images/logo.png" alt="Sports World Logo" width="150">
         </div>
-        <!-- Include navigation bar -->
-        <?php include 'nav.php'; ?>
     </header>
 
     <!-- Main Content -->
     <main>
         <section class="events">
-            <h2>Events</h2>
+            <h2>Upcoming Events</h2>
             <div class="event-item" id="summer_camp">
                 <img src="images/summer_camp.jpg" alt="Summer Sports Camp">
                 <h3>Summer Sports Camp</h3>

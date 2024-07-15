@@ -1,16 +1,12 @@
 <?php
-// Database credentials
-$servername = "localhost"; 
-$username = "root"; 
-$password = " "; 
-$dbname = "sports_world"; 
+$host = "localhost";
+$user = "root";
+$pass = "";
+$db = "sports_world";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$mysqli = new mysqli($host, $user, $pass, $db);
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if ($mysqli->connect_error) {
+    die('Connect Error (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
 }
-echo "Connected successfully";
 ?>
